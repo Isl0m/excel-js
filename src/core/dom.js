@@ -31,6 +31,7 @@ class Dom {
   }
 
   on(eventType, callback) {
+    console.log(eventType, this.$el)
     this.$el.addEventListener(eventType, callback)
   }
 

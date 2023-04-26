@@ -13,7 +13,8 @@
     "space-before-blocks": "off",
     "no-trailing-spaces": "off",
     "padded-blocks": "off",
-    "indent": "off"
+    "indent": "off",
+    "no-undef": "off"
 	},
 	"extends": ["eslint:recommended", "google"]
 }

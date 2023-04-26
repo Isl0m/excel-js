@@ -17,7 +17,8 @@ export class DomListener {
           `Method ${method} is not implemented in ${this.name} Component`
         )
       }
-      this.$root.on(listener, this[method].bind(this))
+      this[method] = this[method].bind(this)
+      this.$root.on(listener, this[method])
     })
   }
 
