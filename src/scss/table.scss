@@ -2,63 +2,106 @@
 @import "mixins";
 
 .excel__table {
-	position: absolute;
-	top: $header-height + $toolbar-height + $formula-height;
-	left: 0;
-	right: 0;
-	overflow-x: auto;
-	padding-bottom: 2px;
+  position: absolute;
+  top: $header-height + $toolbar-height + $formula-height;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  padding-bottom: 2px;
 
-	.row {
-		display: flex;
-		min-height: 20px;
-		height: $row-height;
-	}
+  .row {
+    display: flex;
+    min-height: 20px;
+    height: $row-height;
+  }
 
-	.row__info {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-width: $info-cell-width;
-		height: 100%;
-		border: 1px solid $border-color;
-		background: #f8f9fa;
-		border-top: none;
-	}
+  .row__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	.row__data {
-		display: flex;
-	}
+    min-width: $info-cell-width;
+    height: 100%;
 
-	.column {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: #f8f9fa;
-		min-width: 40px;
-		width: $cell-width;
-		border: 1px solid $border-color;
-		border-top: 0;
-		border-left: 0;
-		height: 100%;
-	}
+    border: 1px solid $border-color;
+    border-top: none;
+    background: #f8f9fa;
 
-	.cell {
-		min-width: 40px;
-		padding: 5px;
-		width: $cell-width;
-		height: 100%;
-		border: 1px solid #e2e3e3;
-		border-top: 0;
-		border-left: 0;
-		color: #111;
-		white-space: nowrap;
-		outline: none;
+    position: relative;
+    user-select: none;
+  }
 
-		&.selected {
-			border: none;
-			outline: 2px solid #3c74ff;
-			z-index: 2;
-		}
-	}
+  .row__data {
+    display: flex;
+  }
+
+  .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 40px;
+    width: $cell-width;
+    height: 100%;
+
+    background: #f8f9fa;
+    border: 1px solid $border-color;
+    border-top: 0;
+    border-left: 0;
+
+    position: relative;
+    user-select: none;
+  }
+
+  .cell {
+    padding: 5px;
+
+    min-width: 40px;
+    width: $cell-width;
+    height: 100%;
+
+    border: 1px solid #e2e3e3;
+    border-top: 0;
+    border-left: 0;
+    color: #111;
+
+    white-space: nowrap;
+    outline: none;
+
+    &.selected {
+      border: none;
+      outline: 2px solid $primary-color;
+      z-index: 2;
+    }
+  }
+
+  .col-resize,
+  .row-resize {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $primary-color;
+    opacity: 0;
+    z-index: 1000;
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+  .col-resize {
+    top: 0;
+    width: 4px;
+
+    &:hover {
+      cursor: col-resize;
+    }
+  }
+
+  .row-resize {
+    left: 0;
+    height: 4px;
+
+    &:hover {
+      cursor: row-resize;
+    }
+  }
 }
