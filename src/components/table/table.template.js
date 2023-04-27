@@ -1,33 +1,33 @@
 const CHAR_CODES = {
   A: 65,
-  Z: 90,
+  Z: 90
 }
 
-function toCol(col) {
+function toCol(col, index) {
   return `
-  <div class="column">
+  <div class='column' data-type='resizeble' data-col='${index}'>
     ${col}
-    <div class="col-resize"></div>
+    <div class='col-resize' data-resize='col'></div>
   </div>`
 }
 
-function toCell(content) {
+function toCell(content, col) {
   return `
-  <div class="cell" contenteditable spellcheck="false">
+  <div class='cell' contenteditable spellcheck='false' data-col='${col}'>
     ${content}
   </div>
   `
 }
 
 function createRow(info, content) {
-  const resize = info ? '<div class="row-resize"></div>' : ''
+  const resize = info ? '<div class="row-resize" data-resize="row"></div>' : ''
   return `
-  <div class="row">
-    <div class="row__info">
+  <div class='row'  data-type='resizeble'>
+    <div class='row__info'>
       ${info ? info : ''}
       ${resize}
     </div>
-    <div class="row__data">${content}</div>
+    <div class='row__data'>${content}</div>
   </div>
   `
 }

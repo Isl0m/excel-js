@@ -31,12 +31,35 @@ class Dom {
   }
 
   on(eventType, callback) {
-    console.log(eventType, this.$el)
     this.$el.addEventListener(eventType, callback)
   }
 
   off(eventType, callback) {
     this.$el.removeEventListener(eventType, callback)
+  }
+
+  get data() {
+    return this.$el.dataset
+  }
+
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
+
+  getCords() {
+    return this.$el.getBoundingClientRect()
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+
+  css(styles = {}) {
+
+    Object.keys(styles).forEach(key => {
+      this.$el.style[key] = styles[key]
+    })
+    return this
   }
 }
 
