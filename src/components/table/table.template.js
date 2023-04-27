@@ -4,7 +4,11 @@ const CHAR_CODES = {
 }
 
 function toCol(col) {
-  return `<div class="column">${col}</div>`
+  return `
+  <div class="column">
+    ${col}
+    <div class="col-resize"></div>
+  </div>`
 }
 
 function toCell(content) {
@@ -16,9 +20,13 @@ function toCell(content) {
 }
 
 function createRow(info, content) {
+  const resize = info ? '<div class="row-resize"></div>' : ''
   return `
   <div class="row">
-    <div class="row__info">${info ? info : ''}</div>
+    <div class="row__info">
+      ${info ? info : ''}
+      ${resize}
+    </div>
     <div class="row__data">${content}</div>
   </div>
   `
