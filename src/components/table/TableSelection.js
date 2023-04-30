@@ -8,19 +8,9 @@ export class TableSelection {
 
   select($el) {
     this.clear()
-    $el.addClass(TableSelection.className)
+    $el.focus().addClass(TableSelection.className)
     this.current = $el
     this.group.push($el)
-  }
-
-  rangeOfCell({ row, col }) {
-    const range = []
-    for (let i = 0; i <= row; i++) {
-      for (let j = 0; j <= col; j++) {
-        range.push(`${i}:${j}`)
-      }
-    }
-    return range
   }
 
   selectGroup($group) {
