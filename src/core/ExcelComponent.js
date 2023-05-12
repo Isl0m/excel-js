@@ -1,37 +1,50 @@
-import { DomListener } from './DomListener'
+import { DomListener } from './DomListener';
 
 export class ExcelComponent extends DomListener {
-
   constructor($root, options = {}) {
-    super($root, options.listeners)
-    this.name = options.name || ''
-    this.emitter = options.emitter
-    this.unsubscriber = []
+    super($root, options.listeners);
+    this.name = options.name || '';
+    this.emitter = options.emitter;
+    this.subscribe = options.subscribe || [];
+    this.store = options.store;
+    this.unsubscribers = [];
 
-    this.prepare()
+    this.prepare();
   }
 
   prepare() {}
 
   toHtml() {
-    return ''
+    return '';
   }
 
-  $emit(event, ...args){
-    this.emitter.emit(event, ...args)
+  $emit(event, ...args) {
+    this.emitter.emit(event, ...args);
   }
 
-  $on(event, fn){
-    const unsub = this.emitter.subscribe(event, fn)
-    this.unsubscriber.push(unsub)
+  $on(event, fn) {
+    const unsub = this.emitter.subscribe(event, fn);
+    this.unsubscribers.push(unsub);
+  }
+
+  $dispatch(action) {
+    this.store.dispatch(action);
   }
 
   init() {
-    this.initDOMListeners()
+    this.initDOMListeners();
+  }
+
+  storeChanged() {
+    throw new Error('Function must be changed');
+  }
+
+  isWatching(key) {
+    return this.subscribe.includes(key);
   }
 
   destroy() {
-    this.removeDOMListeners()
-    this.unsubscriber.forEach(unsub => unsub())
+    this.removeDOMListeners();
+    this.unsubscribers.forEach(unsub => unsub());
   }
 }

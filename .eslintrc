@@ -12,11 +12,14 @@
     "require-jsdoc": "off",
     "space-before-blocks": "off",
     "no-trailing-spaces": "off",
-    "padded-blocks": "off",
+      "padded-blocks": "off",
     "indent": "off",
     "no-undef": "off",
     "comma-dangle": "off",
-    "no-debugger": "off"
+    "no-debugger": "off",
+    "eol-last": "off",
+    "space-before-function-paren": "off",
+    "operator-linebreak": "off"
   },
   "extends": [
     "eslint:recommended",

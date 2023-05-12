@@ -1,7 +1,13 @@
 {
-	"semi": false,
-	"singleQuote": true,
-	"arrowParens": "avoid",
-	"useTabs": false,
-	"trailingComma": "es5"
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "useTabs": false,
+  "trailingComma": "es5",
+  "importOrder": [
+    "^@core/(.*)$",
+    "^@(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
