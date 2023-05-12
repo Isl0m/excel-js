@@ -5,11 +5,8 @@
     "paths": {
       "@core/*": [
         "./src/core/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-    },
+      ]
+    }
   },
   "exclude": [
     "dist",

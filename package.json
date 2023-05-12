@@ -15,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
@@ -26,6 +27,7 @@
     "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.5",
+    "prettier": "^2.8.8",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
     "webpack": "^5.80.0",
