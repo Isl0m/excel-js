@@ -49,7 +49,7 @@
 	}
 
 	&__table {
-		padding: 1px;
+		padding: 1rem;
 	}
 
 	&__list__header {
@@ -74,10 +74,10 @@
 		margin-bottom: 10px;
 
 		&:hover {
-			// background: #dadada;
-			// border-radius: 25px;
+			border-radius: 25px;
 			background: #e6f4ea;
-			border-radius: 4px;
+			// background: #dadada;
+			// border-radius: 4px;
 		}
 
 		a {
