@@ -1,7 +1,7 @@
 import { $ } from '@core/dom';
-import { Page } from '@core/router/Page';
+import { Page } from '@core/page/Page';
 
-import { createRecordsTable } from '@/pages/dashboard.functions';
+import { createRecordsTable } from '@/shared/dashboard.functions';
 
 export class DashboardPage extends Page {
   getRoot() {
